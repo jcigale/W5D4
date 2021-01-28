@@ -10,4 +10,13 @@ User.create(email: 'a@gmail.com')
 User.create(email: 'b@gmail.com')
 
 ShortenedUrl.create(long_url: 'http://espn.go.com', short_url: 'https://randomcode.su', submitter_id: 1)
+ShortenedUrl.create(long_url: 'http://facebook.com', short_url: 'askjieuciowvbiqorbuvq', submitter_id: 2)
 
+Visit.record_visit!(User.first, ShortenedUrl.first)
+Visit.record_visit!(User.first, ShortenedUrl.second)
+Visit.record_visit!(User.first, ShortenedUrl.second)
+Visit.record_visit!(User.first, ShortenedUrl.first)
+Visit.record_visit!(User.first, ShortenedUrl.first)
+Visit.record_visit!(User.first, ShortenedUrl.second)
+Visit.record_visit!(User.second, ShortenedUrl.second)
+Visit.record_visit!(User.second, ShortenedUrl.second)
