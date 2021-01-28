@@ -35,7 +35,21 @@ class ShortenedUrl < ApplicationRecord
         class_name: :Visit
 
     has_many :visitors,
+        Proc.new { distinct },
         through: :visits,
         source: :submitter
+
+    def num_clicks
+        self.visits.count
+    end
+
+    def num_uniques
+        self.visitors.count
+    end
+
+    def num_recent_uniques
+        self.num_uniques.where(10.minutes.ago)
+    end
+
 
 end
