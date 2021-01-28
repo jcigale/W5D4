@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(email: 'a@gmail.com')
+User.create(email: 'b@gmail.com')
+
+ShortenedUrl.create(long_url: 'http://espn.go.com', short_url: 'https://randomcode.su', submitter_id: 1)
+
